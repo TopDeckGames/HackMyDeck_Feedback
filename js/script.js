@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-   $(".well form button.btn").on("click", function()
+   $(".well form button.submit").on("click", function()
    {
         var email = $(".well form input[name=email]").val();
         if(!isEmail(email))
@@ -20,6 +20,9 @@ $( document ).ready(function() {
             alert("Un message est requis");
         }
 
+       $(".well form button.submit").css("display", "none");
+       $(".well form img.loader").css("display", "block");
+
        $.ajax({
             url: "rapport.php",
             type: $(".well form").attr("method"),
@@ -29,6 +32,7 @@ $( document ).ready(function() {
             var data = jQuery.parseJSON(result);
             if(data.code == 0)
             {
+                $(".well form")[0].reset();
                 alert(data.message);
             }
             else
@@ -38,6 +42,10 @@ $( document ).ready(function() {
        }).fail(function()
        {
 
+       }).always(function()
+       {
+           $(".well form button.submit").css("display", "block");
+           $(".well form img.loader").css("display", "none");
        });
    });
 });

@@ -32,3 +32,8 @@ body {
 .well textarea {
     resize: none;
 }
+
+.well img.loader {
+    display: none;
+    width: 30px;
+}

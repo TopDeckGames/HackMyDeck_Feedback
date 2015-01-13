@@ -37,13 +37,14 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <label for="message">Message (500 charactères)</label>
+                                    <label for="message">Message (500 charact&egrave;res)</label>
                                     <textarea class="form-control" name="message" rows="5" maxlength="500"></textarea>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-2 col-md-offset-10">
-                                    <button class="btn btn-primary" type="button">Envoyer</button>
+                                    <button class="btn btn-primary submit" type="button">Envoyer</button>
+                                    <img src="loader.gif" class="loader" alt="loader">
                                 </div>
                             </div>
                         </form>
